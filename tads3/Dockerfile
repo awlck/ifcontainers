@@ -1,8 +1,8 @@
-LABEL org.opencontainers.image.source = "https://github.com/awlck/ifcontainers"
-
 ARG LITE_VERSION="v.2.2.2"
 
 FROM mcr.microsoft.com/devcontainers/cpp:debian13
+LABEL org.opencontainers.image.source="https://github.com/awlck/ifcontainers"
+
 RUN apt-get update && apt-get -y dist-upgrade
 RUN git clone https://github.com/realnc/frobtads.git && cd frobtads && \
     git config user.name "Automation" && git config user.email "automation@example.invalid" && \
