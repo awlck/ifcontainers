@@ -2,6 +2,7 @@
 
 ADV3LITE_RELEASE="2.2.2"
 INFORM6UNIX_RELEASE="6.42-r3"
+DIALOG_RELEASE="1a01-1.1.0"
 
 docker build tads3 --build-arg LITE_VERSION=$ADV3LITE_RELEASE -t ghcr.io/awlck/ifcontainers/tads3:3.1.3fix-lite-$ADV3LITE_RELEASE
 docker push ghcr.io/awlck/ifcontainers/tads3:3.1.3fix-lite-$ADV3LITE_RELEASE
@@ -13,3 +14,7 @@ docker push ghcr.io/awlck/ifcontainers/inform6:$INFORM6UNIX_RELEASE
 docker build inform6-git -t ghcr.io/awlck/ifcontainers/inform6:latest
 docker push ghcr.io/awlck/ifcontainers/inform6:latest
 
+docker build dialog --build-arg DIALOG_VER=release-$DIALOG_RELEASE -t ghcr.io/awlck/ifcontainers/dialog:$DIALOG_RELEASE
+docker push ghcr.io/awlck/ifcontainers/dialog:$DIALOG_RELEASE
+docker build dialog --build-arg DIALOG_VER=master -t ghcr.io/awlck/ifcontainers/dialog:latest
+docker push ghcr.io/awlck/ifcontainers/dialog:latest
